@@ -22,7 +22,7 @@ elements:
           color: "#C62828"
 
   # Правило для первого сервера по ID
-  - id: "server1"
+  - id: "AltARM"
     # Здесь указываем dataKey, если хотим связать с конкретной метрикой
     # Но в примере panelConfig1.yaml это не используется, данные берутся из общей метрики панели
     # Если у каждого сервера своя метрика, используйте так:
@@ -48,7 +48,7 @@ elements:
       format: "{value}%"
 
   # Правило для второго сервера
-  - id: "server2"
+  - id: "AstraARM"
     dataKey: "B"
     styles:
       fill:
@@ -70,7 +70,7 @@ elements:
       format: "{value}%"
 
   # Правило для третьего сервера
-  - id: "server3"
+  - id: "RedOSARM"
     dataKey: "C"
     styles:
       fill:
@@ -96,3 +96,4 @@ elements:
     text:
       content: "Static label text"
       # Не используем ${value} для статических подписей
+
