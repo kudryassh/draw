@@ -1,35 +1,98 @@
-# Ultra simple version for 3 servers
+panel:
+  refresh:
+    interval: 30
 
 elements:
-  - id: "server1"
-    dataKey: "A"
+  # Общие стили для всех элементов класса "server" (если такой класс есть в SVG)
+  - class: "server"
     styles:
       fill:
+        - value: "default"
+          color: "#cccccc"
         - operator: "lt"
-          value: 85
-          color: "green"
+          value: 70
+          color: "#2E7D32"
+        - operator: "gte"
+          value: 70
+          operator2: "lt"
+          value2: 85
+          color: "#F9A825"
         - operator: "gte"
           value: 85
-          color: "red"
+          color: "#C62828"
 
+  # Правило для первого сервера по ID
+  - id: "server1"
+    # Здесь указываем dataKey, если хотим связать с конкретной метрикой
+    # Но в примере panelConfig1.yaml это не используется, данные берутся из общей метрики панели
+    # Если у каждого сервера своя метрика, используйте так:
+    dataKey: "A"
+    styles:
+      # Можно переопределить общие стили или оставить как есть
+      fill:
+        - value: "default"
+          color: "#cccccc"
+        - operator: "lt"
+          value: 70
+          color: "#2E7D32"
+        - operator: "gte"
+          value: 70
+          operator2: "lt"
+          value2: 85
+          color: "#F9A825"
+        - operator: "gte"
+          value: 85
+          color: "#C62828"
+    text:
+      content: "${value}%"
+      format: "{value}%"
+
+  # Правило для второго сервера
   - id: "server2"
     dataKey: "B"
     styles:
       fill:
+        - value: "default"
+          color: "#cccccc"
         - operator: "lt"
-          value: 85
-          color: "green"
+          value: 70
+          color: "#2E7D32"
+        - operator: "gte"
+          value: 70
+          operator2: "lt"
+          value2: 85
+          color: "#F9A825"
         - operator: "gte"
           value: 85
-          color: "red"
+          color: "#C62828"
+    text:
+      content: "${value}%"
+      format: "{value}%"
 
+  # Правило для третьего сервера
   - id: "server3"
     dataKey: "C"
     styles:
       fill:
+        - value: "default"
+          color: "#cccccc"
         - operator: "lt"
-          value: 85
-          color: "green"
+          value: 70
+          color: "#2E7D32"
+        - operator: "gte"
+          value: 70
+          operator2: "lt"
+          value2: 85
+          color: "#F9A825"
         - operator: "gte"
           value: 85
-          color: "red"
+          color: "#C62828"
+    text:
+      content: "${value}%"
+      format: "{value}%"
+
+  # Если есть текстовые элементы для подписей (не значений метрик)
+  - class: "label"
+    text:
+      content: "Static label text"
+      # Не используем ${value} для статических подписей
