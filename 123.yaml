@@ -1,0 +1,35 @@
+# Ultra simple version for 3 servers
+
+elements:
+  - id: "server1"
+    dataKey: "A"
+    styles:
+      fill:
+        - operator: "lt"
+          value: 85
+          color: "green"
+        - operator: "gte"
+          value: 85
+          color: "red"
+
+  - id: "server2"
+    dataKey: "B"
+    styles:
+      fill:
+        - operator: "lt"
+          value: 85
+          color: "green"
+        - operator: "gte"
+          value: 85
+          color: "red"
+
+  - id: "server3"
+    dataKey: "C"
+    styles:
+      fill:
+        - operator: "lt"
+          value: 85
+          color: "green"
+        - operator: "gte"
+          value: 85
+          color: "red"
